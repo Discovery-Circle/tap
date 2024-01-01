@@ -6,12 +6,12 @@
 </p>
 
 ## 🚩 Index of Contents
-- [What is TAP?](#-what-is-TAP)
-- [Features](#-features)
-- [Installation](#-installation)
-- [Examples](#-examples)
-- [Similar work](#-similar-work)
-- [Contributors](#-contributors)
+- [What is TAP?](#what-is-tap)
+- [Features](#features)
+- [Installation](#installation)
+- [Examples](#example)
+- [Similar work](#similar-work)
+- [Contributors](#contributors)
 
 ## What is TAP?
 
