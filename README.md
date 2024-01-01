@@ -1,4 +1,4 @@
-# TAP -- s**T**atistical annot**A**ion with **P**lotly
+# TAP -- s**T**atistical annot**A**tion with **P**lotly
 
 ## 🚩 Index of Contents
 - [What is TAP?](#-what-is-TAP)
