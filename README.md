@@ -1,4 +1,8 @@
-# TAP -- s**T**atistical annot**A**tion with **P**lotly
+<p align="center">
+  <img src="images/TAP.png" alt="Logo" height=170>
+</p>
+<h1 align="center">TAP</h1>
+<h3 align="center">s<span style="color:Aqua;">T</span>atistical annot<span style="color:Aqua;">A</span>tion with <span style="color:Aqua;">P</span>lotly</h3>
 
 ## 🚩 Index of Contents
 - [What is TAP?](#-what-is-TAP)
