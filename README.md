@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="images/TAP.png" alt="Logo" height=170>
+  <img src="images/TAP.png" height=170>
 </p>
-<h1 align="center">TAP</h1>
-<h3 align="center">s<span style="color:Aqua;">T</span>atistical annot<span style="color:Aqua;">A</span>tion with <span style="color:Aqua;">P</span>lotly</h3>
+<p align="center">
+  <img src="images/TAP_text.png" height=100>
+</p>
 
 ## 🚩 Index of Contents
 - [What is TAP?](#-what-is-TAP)
