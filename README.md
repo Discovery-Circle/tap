@@ -47,11 +47,10 @@ annotations on plots generated with Plotly
     - **Holm-Sidak**
     - **Benjamini-Hochberg**
 
-
 ## 📦 Installation
 **TAP** is present on pipy, and can be downloaded directly with pip
 ```bash
-pip install tap
+pip install taplib
 ```
 Or if you prefer you can clone the repository and install it manually
 ```bash
@@ -109,8 +108,6 @@ tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 tap.plot_stats(df, x, y, kwargs={"width":500, "height":500})
 ```
 ![img](images/example_kwargs.png)
----
-
 
 ## 📝 Similar work
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
@@ -149,4 +146,3 @@ This repository is inspired by trevismd/statannotations ([Statannotations](https
     </tr>
   </tbody>
 </table>
-
