@@ -106,10 +106,37 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500})
 This repository is inspired by trevismd/statannot ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
 
 ## ✨ Contributors
-<table>
+<table align="center">
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FedericaPersiani"><img src=" width="100px;" alt=""/><br /><sub> <b>Federica Persiani</b></sub></a><br /> <title="Code">💻</a> <title="Research">🔬</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/demian2435"><img src=" width="100px;" alt=""/><br /><sub><b>Damiano Malori</b></sub></a><br /> <title="Code">💻</a><title="Packaging">📦</a></td>
-
+      <!-- FEDERICA PERSIANI -->
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://kentcdodds.com">
+          <img src="https://avatars.githubusercontent.com/u/101985116?v=3?s=100" width="100px;" alt="Federica Persiani"/>
+          <br />
+          <sub>
+            <b>Federica Persiani</b>
+          </sub>
+        </a>
+        <br />
+        <a title="Code">💻</a>
+        <a title="Research">🔬</a>
+      </td>
+      <!-- DAMIANO MALORI -->
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/demian2435">
+          <img src="https://avatars.githubusercontent.com/u/28110775?v=3?s=100" width="100px;" alt="Damiano Malori"/>
+          <br />
+          <sub>
+            <b>Damiano Malori</b>
+          </sub>
+        </a>
+        <br />
+        <a title="Code">💻</a>
+        <a title="Packaging">📦</a>
+      </td>
+      <!-- END -->
+    </tr>
+  </tbody>
+</table>
 
