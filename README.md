@@ -102,7 +102,8 @@ This repository is inspired by trevismd/statannot ([Statannotations](https://git
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FedericaPersiani"><img src=" width="100px;" alt=""/><br /><sub><b>Federica Persiani</b></sub></a><br /> <title="Code">💻</a> <title="Research">🔬</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FedericaPersiani"><img src=" width="100px;" alt=""/><br /><sub>
+      <b>Federica Persiani</b></sub></a><br /> <title="Code">💻</a> <title="Research">🔬</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/demian2435"><img src=" width="100px;" alt=""/><br /><sub><b>Damiano Malori</b></sub></a><br /> <title="Code">💻</a><title="Packaging">📦</a></td>
 
 
