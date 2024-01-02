@@ -6,13 +6,14 @@
 </p>
 
 ## 🚩 Index of Contents
-- [What is TAP?](#what-is-tap)
-- [Features](#features)
-- [Installation](#installation)
-- [Examples](#example)
-- [Similar work](#similar-work)
-- [Contributors](#contributors)
+- [What is TAP?](#anchor_what_is_tap)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Examples](#-example)
+- [Similar work](#-similar-work)
+- [Contributors](#anchor_contributors)
 
+<a id="anchor_what_is_tap"></a>
 ## 📌 What is TAP?
 
 Python package to make statistical test and add statistical
@@ -115,6 +116,7 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500})
 ## 📝 Similar work
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
 
+<a id="anchor_contributors"></a>
 ## ✨ Contributors
 <table align="center">
   <tbody>
