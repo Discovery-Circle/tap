@@ -26,7 +26,7 @@ annotations on plots generated with Plotly
     - **Box plots**
     - **Strip plots**
 
-- Integrated statistical tests (binding to `scipy.stats` methods):
+- Integrated statistical tests (`scipy.stats` methods):
     - **Mann-Whitney test**
     - **t-test (independent and paired)**
     - **t-test-related (dipendent)**
@@ -40,6 +40,12 @@ annotations on plots generated with Plotly
     - **Alexander-Govern test**
     - **Fligner-Killeen test**
     - **Bartlett test**
+
+- Correction for statistical test can be applied (`statsmodel.stats.multitest.multipletests` method):
+    - **Bonferroni**
+    - **Sidak**
+    - **Holm-Sidak**
+    - **Benjamini-Hochberg**
 
 
 ## Installation
