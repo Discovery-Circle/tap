@@ -130,7 +130,7 @@ def plot_stats(
                 case "Bartlett":
                     p_value = stats.bartlett(values_p0,values_p1)
                 case _:
-                    raise Exception(f"Type test {type_test} does not exist, use one of [Mann-Whitney, ...]")
+                    raise Exception(f"Type test {type_test} does not exist, use one of [Mann-Whitney,t-test,t-test-related,Wilcoxon,Kruskal-Wallis,Levene,Brunner-Munzel,Ansari-Bradley,CramerVon-Mises,Kolmogorov-Smirnov,Alexander-Govern,Fligner-Killeen]")
 
             p_values_obj.append(
                 {
@@ -155,7 +155,7 @@ def plot_stats(
             case "Benjamini-Hochberg":
                 result = multipletests(all_p_values, method='fdr_bh')
             case _:
-                raise Exception(f"Type correction {type_correction} does not exist")
+                raise Exception(f"Type correction {type_correction} does not exist, use one of [Bonferroni,Sidak,Holm-Sidak,Benjamini-Hochberg]")
 
         for index, e in enumerate(p_values_obj):
             e["p_value"] = result[1][index]
