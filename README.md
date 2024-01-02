@@ -93,6 +93,13 @@ tap.plot_stats(df, x, y, type_plot="strip")
 tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 ```
 ![img](images/example_pairs.png)
+---
+**Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure.
+```python
+tap.plot_stats(df, x, y, kwargs={"width":500, "height":500})
+```
+![img](images/example_kwargs.png)
+---
 
 
 ## 📝 Similar work
