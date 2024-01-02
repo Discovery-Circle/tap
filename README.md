@@ -51,6 +51,49 @@ annotations on plots generated with Plotly
 ## Installation
 
 ## Example
+**Default**: Once your dataframe has been loaded you can pass it to the "plot_stats" function which will apply the "Mann-Whitney" test by default on all classes present in the column indicated as **x**, using the **y** column as the value.
+```python
+import tap
+import pandas as pd
+
+df = pd.read_csv("example.csv")
+x = "day"
+y = "total_bill"
+
+tap.plot_stats(df, x, y)
+```
+![img](images/example_default.png)
+---
+**Order**: You can change the sorting of the plot by passing the list with all the entries present in the **x** column ordered as you prefer.
+```python
+tap.plot_stats(df, x, y, order=["Thur", "Fri", "Sat", "Sun"])
+```
+![img](images/example_order.png)
+---
+**Type test**: You can change the test type using the **type_test** parameter.
+```python
+tap.plot_stats(df, x, y, type_test="CramerVon-Mises")
+```
+![img](images/example_test.png)
+---
+**Type correction**: You can apply a p-value correction algorithm via the **type_correction** parameter.
+```python
+tap.plot_stats(df, x, y, type_correction="Bonferroni")
+```
+![img](images/example_correction.png)
+---
+**Type plot**: You can change the plot type using the **type_plot** parameter.
+```python
+tap.plot_stats(df, x, y, type_plot="strip")
+```
+![img](images/example_plot.png)
+---
+**Pairs**: You can decide the pairs that will be used to generate the statistics to plot.
+```python
+tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
+```
+![img](images/example_pairs.png)
+
 
 ## Similar work
 This repository is based on trevismd/statannot ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
