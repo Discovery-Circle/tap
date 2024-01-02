@@ -96,13 +96,13 @@ tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 
 
 ## 📝 Similar work
-This repository is based on trevismd/statannot ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
+This repository is inspired by trevismd/statannot ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
 
 ## ✨ Contributors
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FedericaPersiani"><img src=" width="100px;" alt=""/><br /><sub><b>Federica Persiani</b></sub></a><br /> <title="Code">💻</a> <title="Research"> 🔬</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/FedericaPersiani"><img src=" width="100px;" alt=""/><br /><sub><b>Federica Persiani</b></sub></a><br /> <title="Code">💻</a> <title="Research">🔬</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/demian2435"><img src=" width="100px;" alt=""/><br /><sub><b>Damiano Malori</b></sub></a><br /> <title="Code">💻</a><title="Packaging">📦</a></td>
 
 
