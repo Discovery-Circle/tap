@@ -111,7 +111,7 @@ This repository is inspired by trevismd/statannot ([Statannotations](https://git
     <tr>
       <!-- FEDERICA PERSIANI -->
       <td align="center" valign="top" width="14.28%">
-        <a href="https://kentcdodds.com">
+        <a href="https://github.com/FedericaPersiani">
           <img src="https://avatars.githubusercontent.com/u/101985116?v=3?s=100" width="100px;" alt="Federica Persiani"/>
           <br />
           <sub>
