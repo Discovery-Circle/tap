@@ -56,5 +56,9 @@ annotations on plots generated with Plotly
 This repository is based on trevismd/statannot ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical test and annotations with seaborn
 
 ## Contributors
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://ivesvh.com"><img src=" width="100px;" alt=""/><br /><sub><b>Damiano Malori</b></sub></a><br /> <title="Code">💻</a>
 
 
