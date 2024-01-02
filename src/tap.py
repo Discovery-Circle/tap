@@ -11,7 +11,8 @@ def plot_stats(
         order = None,
         type_plot="box",
         type_test="Mann-Whitney",
-        type_correction = None
+        type_correction = None,
+        kwargs = {}
     ):
     '''
         DOC
@@ -51,9 +52,9 @@ def plot_stats(
     fig=None
     match type_plot:
         case "box": 
-            fig = px.box(df, x=x, y=y, color=x, category_orders={f"{x}": order})
+            fig = px.box(df, x=x, y=y, color=x, category_orders={f"{x}": order}, **kwargs)
         case "strip":
-            fig = px.strip(df, x=x, y=y, color=x, category_orders={f"{x}": order})
+            fig = px.strip(df, x=x, y=y, color=x, category_orders={f"{x}": order}, **kwargs)
 
 
     p_values_obj = []
