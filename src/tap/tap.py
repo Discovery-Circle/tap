@@ -14,7 +14,7 @@ def plot_stats(
         type_plot="box",
         type_test="Mann-Whitney",
         type_correction = None,
-        sub_category = None,
+        subcategory = None,
         cutoff_pvalue = 0.05,
         kwargs = {}
     ):
@@ -42,21 +42,21 @@ def plot_stats(
     v_unit = (v_max - v_min) * 0.1
 
     #FIND ALL GROUP
-    if sub_category is None or sub_category == x:
-        sub_category = None
+    if subcategory is None or subcategory == x:
+        subcategory = None
         all_groups = all_x
     else:
-        all_sub_category = list(df[sub_category].unique())
+        all_sub_category = list(df[subcategory].unique())
         all_groups = []
         for _single_x in all_x:
-            _subs = df[df[x]==_single_x][sub_category].unique()
+            _subs = df[df[x]==_single_x][subcategory].unique()
             _subs_sorted = sorted(_subs)
             for _sub in _subs_sorted:
                 all_groups.append((_single_x, _sub))
     
     #CREATE PAIRS IF pairs IS NONE
     if pairs is None:
-        if sub_category is None:
+        if subcategory is None:
             pairs = list(itertools.combinations(all_groups, 2))
         else:
             pairs = []
@@ -66,7 +66,7 @@ def plot_stats(
     #CALCULATED INFOS
     info_data = dict()
     for _index, _single_group in enumerate(all_groups):
-        if sub_category is None:
+        if subcategory is None:
             _values = df[df[x] == _single_group][y].values
             if len(_values) > 0:
                 info_data[_single_group] = {
@@ -75,7 +75,7 @@ def plot_stats(
                     "index_subclass": _index
                 }
         else:
-            _values = df[ (df[x] == _single_group[0]) & (df[sub_category] == _single_group[1]) ][y].values
+            _values = df[ (df[x] == _single_group[0]) & (df[subcategory] == _single_group[1]) ][y].values
             if len(_values) > 0:
                 info_data[_single_group] = {
                     "max": max(_values),
@@ -87,9 +87,9 @@ def plot_stats(
     fig=None
     match type_plot:
         case "box": 
-            fig = px.box(df, x=x, y=y, color=(x if sub_category is None else sub_category), category_orders={f"{x}": order}, **kwargs)
+            fig = px.box(df, x=x, y=y, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
         case "strip":
-            fig = px.strip(df, x=x, y=y, color=(x if sub_category is None else sub_category), category_orders={f"{x}": order}, **kwargs)
+            fig = px.strip(df, x=x, y=y, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
 
     p_values_obj = []
     #i == DISTANCE
@@ -106,12 +106,12 @@ def plot_stats(
         #GENERATE ANNOTATIONS
         for _pair in _distance_dict.keys():
             #GET VARS
-            if sub_category is None:
+            if subcategory is None:
                 _values_p0 = df[df[x]==_pair[0]][y].values
                 _values_p1 = df[df[x]==_pair[1]][y].values
             else:
-                _values_p0 = df[ (df[x]==_pair[0][0]) & (df[sub_category]==_pair[0][1]) ][y].values
-                _values_p1 = df[ (df[x]==_pair[1][0]) & (df[sub_category]==_pair[1][1]) ][y].values
+                _values_p0 = df[ (df[x]==_pair[0][0]) & (df[subcategory]==_pair[0][1]) ][y].values
+                _values_p1 = df[ (df[x]==_pair[1][0]) & (df[subcategory]==_pair[1][1]) ][y].values
 
             _index_class0 = info_data[_pair[0]]["index_class"]
             _index_class1 = info_data[_pair[1]]["index_class"]
@@ -135,13 +135,13 @@ def plot_stats(
             _value_line_y += v_unit
 
             #PLOT LINE
-            if sub_category is None:
+            if subcategory is None:
                 fig.add_shape(type="path",
                     path=f"M {_index_class0},{_value_line_y - (v_unit * 0.5)} L{_index_class0},{_value_line_y} L{_index_class1},{_value_line_y} L{_index_class1},{_value_line_y - (v_unit * 0.5)}", 
                     line=dict(color="Black",width=1.5)
                 )
             else:
-                #CALCULATE OFFSET FOR SUB_CATEGORY
+                #CALCULATE OFFSET FOR SUBCATEGORY
                 _offset_default = 2.8 / (len(all_x) * len(all_sub_category))
                 _half_dist = len(all_sub_category) // 2
                 _dist0 = all_sub_category.index(_pair[0][1])

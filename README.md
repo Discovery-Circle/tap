@@ -108,11 +108,11 @@ tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 ---
 **Sub category**: Through the "sub_category" parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, sub-category)
 ```python
-tap.plot_stats(df, x, y, sub_category="sex")
+tap.plot_stats(df, x, y, subcategory="sex")
 ```
 ![img](images/example_subcategory1.png)
 ```python
-tap.plot_stats(df, x, y, sub_category="sex", pairs=[(("Sun", "Male"), ("Sat", "Male")), (("Sun", "Male"), ("Sun", "Female"))])
+tap.plot_stats(df, x, y, subcategory="sex", pairs=[(("Sun", "Male"), ("Sat", "Male")), (("Sun", "Male"), ("Sun", "Female"))])
 ```
 ![img](images/example_subcategory2.png)
 ---
