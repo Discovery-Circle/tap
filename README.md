@@ -60,7 +60,7 @@ pip install .
 ```
 
 ## 🔍 Example
-**Default**: Once your dataframe has been loaded you can pass it to the "plot_stats" function which will apply the "Mann-Whitney" test by default on all classes present in the column indicated as **x**, using the **y** column as the value
+Once your dataframe has been loaded you can pass it to the "plot_stats" function which will apply the "Mann-Whitney" test by default on all classes present in the column indicated as **x**, using the **y** column as the value
 ```python
 import tap
 import pandas as pd
@@ -73,11 +73,11 @@ tap.plot_stats(df, x, y)
 ```
 ![img](images/example_default.png)
 ---
-**Order**: You can change the sorting of the plot by passing the list with all the entries present in the **x** column ordered as you prefer
+**Cutoff pvalue**: You can change the significance of the null hypothesis through the **cutoff_pvalue** parameter, by default it is set to 0.05.
 ```python
-tap.plot_stats(df, x, y, order=["Thur", "Fri", "Sat", "Sun"])
+tap.plot_stats(df, x, y, cutoff_pvalue=0.01)
 ```
-![img](images/example_order.png)
+![img](images/example_cutoff.png)
 ---
 **Type test**: You can change the test type using the **type_test** parameter
 ```python
@@ -90,6 +90,12 @@ tap.plot_stats(df, x, y, type_test="CramerVon-Mises")
 tap.plot_stats(df, x, y, type_correction="Bonferroni")
 ```
 ![img](images/example_correction.png)
+---
+**Order**: You can change the sorting of the plot by passing the list with all the entries present in the **x** column ordered as you prefer
+```python
+tap.plot_stats(df, x, y, order=["Thur", "Fri", "Sat", "Sun"])
+```
+![img](images/example_order.png)
 ---
 **Type plot**: You can change the plot type using the **type_plot** parameter
 ```python
