@@ -220,7 +220,7 @@ def plot_stats(
             _element["p_value"] = _result[1][_index]
 
     for _element in p_values_obj:
-        _color = "Green" if _element["p_value"] <= cutoff_pvalue else "Red"
+        _color = "Green" if _element["p_value"] <= cutoff_pvalue else "Black"
         _pvalue = round(_element["p_value"], 3) if _element["p_value"] >= 0.001 else "< 0.001"
         #PLOT TEXT
         fig.add_annotation(
