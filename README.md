@@ -18,7 +18,6 @@
 Python package to make statistical test and add statistical
 annotations on plots generated with Plotly
 
-
 ## ✅ Features
 
 - Single function to make statistical tests and add statistical annotations on plots
@@ -63,9 +62,9 @@ pip install .
 Once your dataframe has been loaded you can pass it to the "plot_stats" function which will apply the "Mann-Whitney" test by default on all classes present in the column indicated as **x**, using the **y** column as the value
 ```python
 import tap
-import pandas as pd
+import seaborn as sns
 
-df = pd.read_csv("example.csv")
+df = sns.load_dataset("tips")
 x = "day"
 y = "total_bill"
 
@@ -108,6 +107,16 @@ tap.plot_stats(df, x, y, type_plot="strip")
 tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 ```
 ![img](images/example_pairs.png)
+---
+**Sub category**: Through the "sub_category" parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, sub-category)
+```python
+tap.plot_stats(df, x, y, sub_category="sex")
+```
+![img](images/example_subcategory1.png)
+```python
+tap.plot_stats(df, x, y, sub_category="sex", pairs=[(("Sun", "Male"), ("Sat", "Male")), (("Sun", "Male"), ("Sun", "Female"))])
+```
+![img](images/example_subcategory2.png)
 ---
 **Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure
 ```python
