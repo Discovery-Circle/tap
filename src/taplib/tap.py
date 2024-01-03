@@ -1,7 +1,9 @@
-from scipy import stats
-from statsmodels.stats.multitest import multipletests
-import plotly.express as px
+import warnings
 import itertools
+from scipy import stats
+import plotly.express as px
+from statsmodels.stats.multitest import multipletests
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def plot_stats(
         df,
@@ -12,11 +14,11 @@ def plot_stats(
         type_plot="box",
         type_test="Mann-Whitney",
         type_correction = None,
+        cutoff_pvalue = 0.05,
         kwargs = {}
     ):
     '''
-        DOC
-        ---
+        tap.plot_stats
     '''
     #GET ALL CLASS
     all_x = list(df[x].unique())
@@ -163,7 +165,7 @@ def plot_stats(
 
 
     for ele in p_values_obj:
-        color = "Green" if ele["p_value"] <= 0.05 else "Red"
+        color = "Green" if ele["p_value"] <= cutoff_pvalue else "Red"
         p_value = round(ele["p_value"], 3) if ele["p_value"] >= 0.001 else "< 0.001"
         #PLOT TEXT
         fig.add_annotation(

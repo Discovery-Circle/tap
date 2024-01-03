@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "taplib"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Federica Persiani" },
   { name="Damiano Malori" }
@@ -20,7 +20,8 @@ classifiers = [
 dependencies = [
     "statsmodels>=0.13.5",
     "scipy>=1.10.0",
-    "plotly>=5.15.0"
+    "plotly>=5.15.0",
+    "nbformat>=4.2.0"
 ]
 
 [project.urls]
