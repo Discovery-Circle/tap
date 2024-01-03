@@ -106,7 +106,7 @@ tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 ```
 ![img](images/example_pairs.png)
 ---
-**Sub category**: Through the "sub_category" parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, sub-category)
+**Sub category**: Through the "subcategory" parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, subcategory)
 ```python
 tap.plot_stats(df, x, y, subcategory="sex")
 ```
