@@ -57,7 +57,7 @@ pip install .
 ```
 
 ## 🔍 Example
-Once your dataframe has been loaded you can pass it to the "plot_stats" function which will apply the "Mann-Whitney" test by default on all classes present in the column indicated as **x**, using the **y** column as the value
+Once your dataframe has been loaded you can pass it to the **plot_stats** function which will apply the **Mann-Whitney** test by default on all classes present in the column indicated as **x**, using the **y** column as the value
 ```python
 import tap
 import seaborn as sns
@@ -106,7 +106,7 @@ tap.plot_stats(df, x, y, pairs=[("Sun", "Sat"), ("Sun", "Thur")])
 ```
 ![img](images/example_pairs.png)
 ---
-**Sub category**: Through the "subcategory" parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, subcategory)
+**Sub category**: Through the **subcategory** parameter it is possible to divide the various entries into a further sub-category, you can decide the various pairings using the **pairs** parameter but in this case you will need to declare them as a tuple (primary category, subcategory)
 ```python
 tap.plot_stats(df, x, y, subcategory="sex")
 ```
