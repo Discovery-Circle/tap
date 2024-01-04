@@ -116,9 +116,9 @@ tap.plot_stats(df, x, y, subcategory="sex", pairs=[(("Sun", "Male"), ("Sat", "Ma
 ```
 ![img](images/example_subcategory2.png)
 ---
-**Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure
+**Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure, or a title
 ```python
-tap.plot_stats(df, x, y, kwargs={"width":500, "height":500})
+tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title"})
 ```
 ![img](images/example_kwargs.png)
 
