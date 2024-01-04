@@ -31,7 +31,7 @@ def plot_stats(
         pairs : list of str tuple (default is None)
         order : list (default is None)
         type_plot: str (dafult is box)
-        type_test : str (default is Mann-Withney)
+        type_test : str (default is Mann-Whitney)
         type_correction : str (default is None)
         subcategory : str (default is None)
         cutoff_pvalue : float (default is 0.05)
@@ -263,4 +263,4 @@ def plot_stats(
         if filename.endswith(".html"):
             fig.write_html(filename)
         else:
-            fig.write_image(filename, engine='kaleido', width=export_size[0], height=export_size[1], scale=export_size[2])
+            fig.write_image(filename, format=filename.split(".")[-1], engine='kaleido', width=export_size[0], height=export_size[1], scale=export_size[2])
