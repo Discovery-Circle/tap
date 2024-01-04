@@ -2,4 +2,4 @@ __pycache__
 taplib.egg-info
 build
 dist
-.venv
+.venv*
