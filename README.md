@@ -128,7 +128,7 @@ tap.plot_stats(df, x, y, subcategory="sex", pairs=[(("Sun", "Male"), ("Sat", "Ma
 ```python
 tap.plot_stats(df, x, y, filename="images/export_1.png", export_size=(800, 400))
 ```
-![img](images/export_1.png)
+![img](images/example_export.png)
 ---
 **Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure, or a title
 ```python
