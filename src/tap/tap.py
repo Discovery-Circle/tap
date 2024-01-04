@@ -20,6 +20,25 @@ def plot_stats(
     ):
     '''
         tap.plot_stats
+        It's a function to make statistical tests and add statistical annotations on Plotly graph
+
+        Parameters
+        --------
+        df : DataFrame
+        x : str
+        y : str
+        pairs : list of tuple (default is None)
+        order : list (default is None)
+        type_plot: str (dafult is box)
+        type_test : str (default is Mann-Withney)
+        type_correction : str (default is None)
+        subcategory : str (default is None)
+        cutoff_pvalue : float (default is 0.05)
+        kwargs : dictionary (dafult is empty)
+
+        Returns
+        --------
+        None
     '''
     #ALL X INSIDE DATAFRAME
     all_x = list(df[x].unique())
