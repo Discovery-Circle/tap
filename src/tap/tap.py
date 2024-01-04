@@ -164,7 +164,7 @@ def plot_stats(
                 )
             else:
                 #CALCULATE OFFSET FOR SUBCATEGORY
-                _offset_default = 2.8 / (len(all_x) * len(all_sub_category))
+                _offset_default = (len(all_x) * 0.70) / (len(all_x) * len(all_sub_category))
                 _half_dist = len(all_sub_category) // 2
                 _dist0 = all_sub_category.index(_pair[0][1])
                 _dist1 = all_sub_category.index(_pair[1][1])
