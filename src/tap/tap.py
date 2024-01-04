@@ -16,10 +16,11 @@ def plot_stats(
         type_correction = None,
         subcategory = None,
         cutoff_pvalue = 0.05,
+        filename = None,
+        export_size = (1360, 768),
         kwargs = {}
     ):
     '''
-        tap.plot_stats
         It's a function to make statistical tests and add statistical annotations on Plotly graph
 
         Parameters
@@ -27,14 +28,16 @@ def plot_stats(
         df : DataFrame
         x : str
         y : str
-        pairs : list of tuple (default is None)
+        pairs : list of str tuple (default is None)
         order : list (default is None)
         type_plot: str (dafult is box)
         type_test : str (default is Mann-Withney)
         type_correction : str (default is None)
         subcategory : str (default is None)
         cutoff_pvalue : float (default is 0.05)
-        kwargs : dictionary (dafult is empty)
+        filename: str (default is None)
+        export_size: int tuple (default is (1360, 768))
+        kwargs : dict (dafult is empty)
 
         Returns
         --------
@@ -253,5 +256,11 @@ def plot_stats(
     #UPDATE FIGURE RANGE Y
     fig['layout']['yaxis'].update(autorange = True)
 
-    #PLOT FIGURE
-    fig.show()
+    #PLOT OR SAVE FIGURE
+    if filename is None:
+        fig.show()
+    else:
+        if filename.endswith(".html"):
+            fig.write_html(filename)
+        else:
+            fig.write_image(filename, engine='kaleido', width=export_size[0], height=export_size[1], scale=3)

@@ -44,6 +44,14 @@ Python package to make statistical tests and add statistical annotations on plot
     - **Holm-Sidak**
     - **Benjamini-Hochberg**
 
+- Exporting plots to formats:
+    - **png**
+    - **jpeg**
+    - **webp**
+    - **svg**
+    - **pdf**
+    - **html**
+
 ## 📦 Installation
 **TAP** is present on pipy, and can be downloaded directly with pip
 ```bash
@@ -115,6 +123,12 @@ tap.plot_stats(df, x, y, subcategory="sex")
 tap.plot_stats(df, x, y, subcategory="sex", pairs=[(("Sun", "Male"), ("Sat", "Male")), (("Sun", "Male"), ("Sun", "Female"))])
 ```
 ![img](images/example_subcategory2.png)
+---
+**Filename**: To directly export the image you can use the **filename** parameter, the standard export size is (1360, 768) but you can modify it via the **export_size** parameter
+```python
+tap.plot_stats(df, x, y, filename="images/export_1.png", export_size=(800, 400))
+```
+![img](images/export_1.png)
 ---
 **Kwargs**: Through the **kwargs** parameter you can pass a key/value pairs directly to the plotly function, such as the size of the figure, or a title
 ```python
