@@ -17,7 +17,7 @@ def plot_stats(
         subcategory = None,
         cutoff_pvalue = 0.05,
         filename = None,
-        export_size = (1360, 768),
+        export_size = (1360, 768, 3),
         kwargs = {}
     ):
     '''
@@ -263,4 +263,4 @@ def plot_stats(
         if filename.endswith(".html"):
             fig.write_html(filename)
         else:
-            fig.write_image(filename, engine='kaleido', width=export_size[0], height=export_size[1], scale=3)
+            fig.write_image(filename, engine='kaleido', width=export_size[0], height=export_size[1], scale=export_size[2])
