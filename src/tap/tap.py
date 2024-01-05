@@ -17,7 +17,7 @@ def plot_stats(
         subcategory = None,
         cutoff_pvalue = 0.05,
         filename = None,
-        export_size = (1360, 768, 3),
+        export_size = (800, 600, 3),
         kwargs = {}
     ):
     '''
@@ -36,7 +36,7 @@ def plot_stats(
         subcategory : str (default is None)
         cutoff_pvalue : float (default is 0.05)
         filename: str (default is None)
-        export_size: int tuple (default is (1360, 768))
+        export_size: int tuple (default is (800, 600, 3))
         kwargs : dict (dafult is empty)
 
         Returns
