@@ -124,7 +124,7 @@ tap.plot_stats(df, x, y, subcategory="sex", pairs=[(("Sun", "Male"), ("Sat", "Ma
 ```
 ![img](images/example_subcategory2.png)
 ---
-**Filename**: To directly export the image you can use the **filename** parameter, the standard export size is (1360, 768, 3) but you can modify it via the **export_size** parameter (width, height, scale-factor)
+**Filename**: To directly export the image you can use the **filename** parameter, the standard export size is (800, 600, 3) but you can modify it via the **export_size** parameter (width, height, scale-factor)
 ```python
 tap.plot_stats(df, x, y, filename="images/export_1.png", export_size=(800, 400, 3))
 ```
