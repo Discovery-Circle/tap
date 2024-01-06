@@ -142,20 +142,24 @@ This repository is inspired by trevismd/statannotations ([Statannotations](https
 
 ## 💬 Citation
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10464613.svg)](https://doi.org/10.5281/zenodo.10464613)
+
+BibTeX
 ```text
-@software{tap-0.1.0,
-  author       = {Federica Persiani and Damiano Malori},
-  title        = {Tap},
-  month        = Jan,
+@software{federicapersiani_2024_10464613,
+  author       = {FedericaPersiani and
+                  Damiano Malori},
+  title        = {Discovery-Circle/tap: v0.1.0},
+  month        = jan,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {v0.1.0},
+  version      = {0.1.0},
   doi          = {10.5281/zenodo.10464613},
   url          = {https://doi.org/10.5281/zenodo.10464613}
 }
 ```
+APA
 ```
-Federica Persiani & Damiano Malori. (2024). Tap (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10464613
+FedericaPersiani, & Damiano Malori. (2024). Discovery-Circle/tap: v0.1.0 (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10464613
 ```
 
 ## ✨ Contributors
