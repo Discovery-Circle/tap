@@ -12,6 +12,7 @@
 - [Examples](#-example)
 - [Similar work](#-similar-work)
 - [Contributors](#-contributors)
+- [Citation](#-citation)
 
 ## 📌 What is TAP?
 
@@ -138,6 +139,24 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title"}
 
 ## 📝 Similar work
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical tests and annotations with seaborn
+
+## 💬 Citation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10464613.svg)](https://doi.org/10.5281/zenodo.10464613)
+```text
+@software{tap-0.1.0,
+  author       = {Federica Persiani and Damiano Malori},
+  title        = {Tap},
+  month        = Jan,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v0.1.0},
+  doi          = {10.5281/zenodo.10464613},
+  url          = {https://doi.org/10.5281/zenodo.10464613}
+}
+```
+```
+Federica Persiani & Damiano Malori. (2024). Tap (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10464613
+```
 
 ## ✨ Contributors
 <table align="center">
