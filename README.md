@@ -145,9 +145,9 @@ This repository is inspired by trevismd/statannotations ([Statannotations](https
 
 BibTeX
 ```text
-@software{federicapersiani_2024_10464613,
-  author       = {FedericaPersiani and
-                  Damiano Malori},
+@software{persiani_2024_10464613,
+  author       = {Persiani, Federica and
+                  Malori, Damiano},
   title        = {Discovery-Circle/tap: v0.1.0},
   month        = jan,
   year         = 2024,
@@ -159,7 +159,7 @@ BibTeX
 ```
 APA
 ```
-FedericaPersiani, & Damiano Malori. (2024). Discovery-Circle/tap: v0.1.0 (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10464613
+Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.0 (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.10464613
 ```
 
 ## ✨ Contributors
