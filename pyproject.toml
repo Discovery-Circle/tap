@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "taplib"
-version = "0.0.5"
+version = "0.1.0"
 authors = [
   { name="Federica Persiani" },
   { name="Damiano Malori" }
@@ -26,5 +26,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/FedericaPersiani/tap"
-Issues = "https://github.com/FedericaPersiani/tap/issues"
+Homepage = "https://github.com/Discovery-Circle/tap"
+Issues = "https://github.com/Discovery-Circle/tap/issues"
