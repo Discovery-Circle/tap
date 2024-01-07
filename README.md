@@ -54,6 +54,8 @@ Python package to make statistical tests and add statistical annotations on plot
     - **html**
 
 ## 📦 Installation
+[![Downloads](https://static.pepy.tech/badge/taplib)](https://pepy.tech/project/taplib)
+
 **TAP** is present on pipy, and can be downloaded directly with pip
 ```bash
 pip install taplib
