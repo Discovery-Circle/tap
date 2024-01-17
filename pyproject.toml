@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "taplib"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="Federica Persiani" },
   { name="Damiano Malori" }
@@ -22,7 +22,7 @@ dependencies = [
     "scipy>=1.10.0",
     "plotly>=5.15.0",
     "nbformat>=4.2.0",
-    "kaleido==0.1.0 ; platform_system == 'Windows'",
+    "kaleido==0.1.0.post1 ; platform_system == 'Windows'",
     "kaleido>=0.1.0 ; platform_system != 'Windows'",
 ]
 
