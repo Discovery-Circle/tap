@@ -143,7 +143,7 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title"}
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical tests and annotations with seaborn
 
 ## 💬 Citation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10524002.svg)](https://doi.org/10.5281/zenodo.10524002)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10604555.svg)](https://doi.org/10.5281/zenodo.10604555)
 
 BibTeX
 ```text
