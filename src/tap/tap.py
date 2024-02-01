@@ -1,3 +1,4 @@
+from math import log10
 import warnings
 import itertools
 from scipy import stats
@@ -216,7 +217,7 @@ def plot_stats(
             p_values_obj.append(
                 {
                     "x": (_index_class0 + _index_class1) * 0.5,
-                    "y": _value_line_y + (v_unit * 0.5),
+                    "y": log10(_value_line_y + (v_unit * 0.5)) if kwargs.get("log_y", False) else _value_line_y + (v_unit * 0.5),
                     "p_value": _pvalue.pvalue,
                     "stat": _pvalue.statistic
                 }
