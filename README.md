@@ -54,7 +54,7 @@ Python package to make statistical tests and add statistical annotations on plot
     - **html**
 
 ## 📦 Installation
-[![Downloads](https://static.pepy.tech/badge/taplib)](https://pepy.tech/project/taplib)
+[![Downloads](https://static.pepy.tech/badge/Taplib)](https://pepy.tech/project/Taplib)
 
 **TAP** is present on pipy, and can be downloaded directly with pip
 ```bash
@@ -143,25 +143,25 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title"}
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical tests and annotations with seaborn
 
 ## 💬 Citation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10523795.svg)](https://doi.org/10.5281/zenodo.10523795)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10524002.svg)](https://doi.org/10.5281/zenodo.10524002)
 
 BibTeX
 ```text
-@software{persiani_2024_10523795,
+@software{persiani_2024_10524002,
   author       = {Persiani, Federica and
                   Malori, Damiano},
-  title        = {Discovery-Circle/tap: v0.1.1},
+  title        = {Discovery-Circle/tap: v0.1.2},
   month        = jan,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {0.1.1},
-  doi          = {10.5281/zenodo.10523795},
-  url          = {https://doi.org/10.5281/zenodo.10523795}
+  version      = {0.1.2},
+  doi          = {10.5281/zenodo.10524002},
+  url          = {https://doi.org/10.5281/zenodo.10524002}
 }
 ```
 APA
 ```
-Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.1 (0.1.1). Zenodo. https://doi.org/10.5281/zenodo.10523795
+Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.2 (0.1.2). Zenodo. https://doi.org/10.5281/zenodo.10524002
 ```
 
 ## ✨ Contributors
