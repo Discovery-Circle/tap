@@ -1,4 +1,3 @@
-from math import log10
 import warnings
 import itertools
 from scipy import stats
@@ -58,6 +57,22 @@ def plot_stats(
         if len(set(order)) != len(all_x):
                 raise NameError(f"Expected all entries, {list(set(all_x).difference(order))} not found")
         all_x = order
+  
+    #SCALE Y LOG10
+    if kwargs.get("log_y", False):
+      from math import log10
+      del kwargs["log_y"]
+      def funzione_scaling(param_x):
+        if param_x >0:
+          return log10(param_x)
+        elif param_x==0:
+          return 0
+        else:
+          return -(log10(abs(param_x)))
+
+      new_column_name = f"log10({y})"
+      df[new_column_name] = df[y].apply(lambda x: funzione_scaling(x))
+      y = new_column_name
 
     #CALCULATE VERTICAL MIN, MAX AND SINGLE UNIT
     v_min = min(df[y].values)
@@ -217,7 +232,7 @@ def plot_stats(
             p_values_obj.append(
                 {
                     "x": (_index_class0 + _index_class1) * 0.5,
-                    "y": log10(_value_line_y + (v_unit * 0.5)) if kwargs.get("log_y", False) else _value_line_y + (v_unit * 0.5),
+                    "y": _value_line_y + (v_unit * 0.5),
                     "p_value": _pvalue.pvalue,
                     "stat": _pvalue.statistic
                 }
