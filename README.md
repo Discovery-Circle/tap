@@ -150,18 +150,18 @@ BibTeX
 @software{persiani_2024_10616392,
   author       = {Persiani, Federica and
                   Malori, Damiano},
-  title        = {Discovery-Circle/tap: v0.1.3},
+  title        = {Discovery-Circle/tap: v0.1.4},
   month        = feb,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {0.1.3},
+  version      = {0.1.4},
   doi          = {10.5281/zenodo.10616392},
   url          = {https://doi.org/10.5281/zenodo.10616392}
 }
 ```
 APA
 ```
-Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.3 (0.1.3). Zenodo. https://doi.org/10.5281/zenodo.10616392
+Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.4 (0.1.4). Zenodo. https://doi.org/10.5281/zenodo.10616392
 ```
 
 ## ✨ Contributors
