@@ -31,6 +31,7 @@ Python package to make statistical tests and add statistical annotations on plot
     - **Levene test**
     - **Wilcoxon test**
     - **Kruskal-Wallis test**
+    - **Dunn test**
     - **Brunner-Munzel test**
     - **Ansari-Bradley test**
     - **CramerVon-Mises test**
