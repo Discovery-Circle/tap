@@ -2,6 +2,7 @@ import warnings
 import itertools
 from scipy import stats
 import plotly.express as px
+import scikit_posthocs as sp
 from statsmodels.stats.multitest import multipletests
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -129,6 +130,15 @@ def plot_stats(
         case "strip":
             fig = px.strip(df, x=x, y=y, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
 
+    dunn_values = {}
+    #In case of Dunn generate Map
+    if type_test == "Dunn":
+        if subcategory is None:
+            dunn_values = sp.posthoc_dunn(df, y, x).to_dict()
+        else:
+            for _val in all_x:
+                dunn_values[_val] = sp.posthoc_dunn(df[df[x] == _val], y, subcategory).to_dict()
+
     p_values_obj = []
     #i == DISTANCE
     for i in range(1, len(all_groups)):
@@ -199,42 +209,49 @@ def plot_stats(
 
             #CALCULATE P_VALUE
             _pvalue = 0
+            _statistic = 0
             match type_test:
                 case "Mann-Whitney":
-                    _pvalue = stats.mannwhitneyu(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.mannwhitneyu(_values_p0,_values_p1)
                 case "t-test":
-                    _pvalue = stats.ttest_ind(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.ttest_ind(_values_p0,_values_p1)
                 case "t-test-related":
-                    _pvalue = stats.ttest_rel(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.ttest_rel(_values_p0,_values_p1)
                 case "Wilcoxon":
-                    _pvalue = stats.wilcoxon(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.wilcoxon(_values_p0,_values_p1)
                 case "Kruskal-Wallis":
-                    _pvalue = stats.kruskal(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.kruskal(_values_p0,_values_p1)
                 case "Levene":
-                    _pvalue = stats.levene(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.levene(_values_p0,_values_p1)
                 case "Brunner-Munzel":
-                    _pvalue = stats.brunnermunzel(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.brunnermunzel(_values_p0,_values_p1)
                 case "Ansari-Bradley":
-                    _pvalue = stats.ansari(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.ansari(_values_p0,_values_p1)
                 case "CramerVon-Mises":
-                    _pvalue = stats.cramervonmises_2samp(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.cramervonmises_2samp(_values_p0,_values_p1)
                 case "Kolmogorov-Smirnov":
-                    _pvalue = stats.kstest(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.kstest(_values_p0,_values_p1)
                 case "Alexander-Govern":
-                    _pvalue = stats.alexandergovern(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.alexandergovern(_values_p0,_values_p1)
                 case "Fligner-Killeen":
-                    _pvalue = stats.fligner(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.fligner(_values_p0,_values_p1)
                 case "Bartlett":
-                    _pvalue = stats.bartlett(_values_p0,_values_p1)
+                    _statistic, _pvalue = stats.bartlett(_values_p0,_values_p1)
+                case "Dunn":
+                    if subcategory is None:
+                        _pvalue = dunn_values[_pair[0]][_pair[1]]
+                    else:
+                        _pvalue = dunn_values[_pair[0][0]][_pair[0][1]][_pair[1][1]]
+                    _statistic = 0
                 case _:
-                    raise Exception(f"Type test {type_test} does not exist, use one of [Mann-Whitney,t-test,t-test-related,Wilcoxon,Kruskal-Wallis,Levene,Brunner-Munzel,Ansari-Bradley,CramerVon-Mises,Kolmogorov-Smirnov,Alexander-Govern,Fligner-Killeen]")
+                    raise Exception(f"Type test {type_test} does not exist, use one of [Mann-Whitney,t-test,t-test-related,Wilcoxon,Kruskal-Wallis,Levene,Brunner-Munzel,Ansari-Bradley,CramerVon-Mises,Kolmogorov-Smirnov,Alexander-Govern,Fligner-Killeen,Dunn]")
 
             p_values_obj.append(
                 {
                     "x": (_index_class0 + _index_class1) * 0.5,
                     "y": _value_line_y + (v_unit * 0.5),
-                    "p_value": _pvalue.pvalue,
-                    "stat": _pvalue.statistic
+                    "p_value": _pvalue,
+                    "stat": _statistic
                 }
             )
 
