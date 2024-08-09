@@ -144,20 +144,20 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title"}
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical tests and annotations with seaborn
 
 ## 💬 Citation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13256766.svg)](https://doi.org/10.5281/zenodo.13256766)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13268065.svg)](https://doi.org/10.5281/zenodo.13268065)
 
 BibTeX
 ```text
-@software{persiani_2024_13256766,
+@software{persiani_2024_13268065,
   author       = {Persiani, Federica and
                   Malori, Damiano},
-  title        = {Discovery-Circle/tap: v0.1.5},
+  title        = {Discovery-Circle/tap: v0.1.6},
   month        = aug,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {0.1.5},
-  doi          = {10.5281/zenodo.13256766},
-  url          = {https://doi.org/10.5281/zenodo.13256766}
+  version      = {0.1.6},
+  doi          = {10.5281/zenodo.13268065},
+  url          = {https://doi.org/10.5281/zenodo.13268065}
 }
 ```
 APA
