@@ -90,13 +90,13 @@ tap.plot_stats(df, x, y, cutoff_pvalue=0.01)
 ---
 **Type test**: You can change the test type using the **type_test** parameter
 ```python
-tap.plot_stats(df, x, y, type_test="CramerVon-Mises")
+tap.plot_stats(df, x, y, type_test="cramervon-mises")
 ```
 ![img](images/example_test.png)
 ---
 **Type correction**: You can apply a p-value correction algorithm via the **type_correction** parameter
 ```python
-tap.plot_stats(df, x, y, type_correction="Bonferroni")
+tap.plot_stats(df, x, y, type_correction="bonferroni")
 ```
 ![img](images/example_correction.png)
 ---

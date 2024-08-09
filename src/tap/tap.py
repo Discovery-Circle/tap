@@ -13,7 +13,7 @@ def plot_stats(
         pairs = None,
         order = None,
         type_plot="box",
-        type_test="Mann-Whitney",
+        type_test="mann-whitney",
         type_correction = None,
         subcategory = None,
         cutoff_pvalue = 0.05,
@@ -44,6 +44,11 @@ def plot_stats(
         --------
         None
     '''
+    #SET TYPE TEST AND TEST CORRECTION TO LOWERCASE
+    type_test=type_test.lower()
+    if type_correction is not None:
+        type_correction=type_correction.lower()
+
     #ALL X INSIDE DATAFRAME
     all_x = list(df[x].unique())
 
@@ -132,7 +137,7 @@ def plot_stats(
 
     dunn_values = {}
     #In case of Dunn generate Map
-    if type_test == "Dunn":
+    if type_test == "dunn":
         if subcategory is None:
             dunn_values = sp.posthoc_dunn(df, y, x).to_dict()
         else:
@@ -211,40 +216,44 @@ def plot_stats(
             _pvalue = 0
             _statistic = 0
             match type_test:
-                case "Mann-Whitney":
+                case "mann-whitney":
                     _statistic, _pvalue = stats.mannwhitneyu(_values_p0,_values_p1)
                 case "t-test":
                     _statistic, _pvalue = stats.ttest_ind(_values_p0,_values_p1)
                 case "t-test-related":
                     _statistic, _pvalue = stats.ttest_rel(_values_p0,_values_p1)
-                case "Wilcoxon":
+                case "wilcoxon":
                     _statistic, _pvalue = stats.wilcoxon(_values_p0,_values_p1)
-                case "Kruskal-Wallis":
+                case "kruskal-wallis":
                     _statistic, _pvalue = stats.kruskal(_values_p0,_values_p1)
-                case "Levene":
+                case "levene":
                     _statistic, _pvalue = stats.levene(_values_p0,_values_p1)
-                case "Brunner-Munzel":
+                case "brunner-munzel":
                     _statistic, _pvalue = stats.brunnermunzel(_values_p0,_values_p1)
-                case "Ansari-Bradley":
+                case "ansari-bradley":
                     _statistic, _pvalue = stats.ansari(_values_p0,_values_p1)
-                case "CramerVon-Mises":
-                    _statistic, _pvalue = stats.cramervonmises_2samp(_values_p0,_values_p1)
-                case "Kolmogorov-Smirnov":
+                case "cramerVon-mises":
+                    _res = stats.cramervonmises_2samp(_values_p0,_values_p1)
+                    _statistic = _res.statistic
+                    _pvalue = _res.pvalue
+                case "kolmogorov-smirnov":
                     _statistic, _pvalue = stats.kstest(_values_p0,_values_p1)
-                case "Alexander-Govern":
-                    _statistic, _pvalue = stats.alexandergovern(_values_p0,_values_p1)
-                case "Fligner-Killeen":
+                case "alexander-govern":
+                    _res = stats.alexandergovern(_values_p0,_values_p1)
+                    _statistic = _res.statistic
+                    _pvalue = _res.pvalue
+                case "fligner-killeen":
                     _statistic, _pvalue = stats.fligner(_values_p0,_values_p1)
-                case "Bartlett":
+                case "bartlett":
                     _statistic, _pvalue = stats.bartlett(_values_p0,_values_p1)
-                case "Dunn":
+                case "dunn":
                     if subcategory is None:
                         _pvalue = dunn_values[_pair[0]][_pair[1]]
                     else:
                         _pvalue = dunn_values[_pair[0][0]][_pair[0][1]][_pair[1][1]]
                     _statistic = 0
                 case _:
-                    raise Exception(f"Type test {type_test} does not exist, use one of [Mann-Whitney,t-test,t-test-related,Wilcoxon,Kruskal-Wallis,Levene,Brunner-Munzel,Ansari-Bradley,CramerVon-Mises,Kolmogorov-Smirnov,Alexander-Govern,Fligner-Killeen,Dunn]")
+                    raise Exception(f"Type test {type_test} does not exist, use one of [mann-whitney,t-test,t-test-related,wilcoxon,kruskal-wallis,levene,brunner-munzel,ansari-bradley,cramervon-mises,kolmogorov-smirnov,alexander-govern,fligner-killeen,dunn]")
 
             p_values_obj.append(
                 {
@@ -260,16 +269,16 @@ def plot_stats(
         
         #https://www.statsmodels.org/dev/generated/statsmodels.stats.multitest.multipletests.html#statsmodels.stats.multitest.multipletests-parameters
         match type_correction:
-            case "Bonferroni":
+            case "bonferroni":
                 _result = multipletests(_list_p_values, method='bonferroni')
-            case "Sidak":
+            case "sidak":
                 _result = multipletests(_list_p_values, method='sidak')
-            case "Holm-Sidak":
+            case "holm-sidak":
                 _result = multipletests(_list_p_values, method='holm-sidak')
-            case "Benjamini-Hochberg":
+            case "benjamini-hochberg":
                 _result = multipletests(_list_p_values, method='fdr_bh')
             case _:
-                raise Exception(f"Type correction {type_correction} does not exist, use one of [Bonferroni,Sidak,Holm-Sidak,Benjamini-Hochberg]")
+                raise Exception(f"Type correction {type_correction} does not exist, use one of [bonferroni,sidak,holm-sidak,benjamini-hochberg]")
 
         for _index, _element in enumerate(p_values_obj):
             _element["p_value"] = _result[1][_index]
