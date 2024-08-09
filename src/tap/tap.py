@@ -233,11 +233,15 @@ def plot_stats(
                 case "ansari-bradley":
                     _statistic, _pvalue = stats.ansari(_values_p0,_values_p1)
                 case "cramerVon-mises":
-                    _statistic, _pvalue = stats.cramervonmises_2samp(_values_p0,_values_p1)
+                    _res = stats.cramervonmises_2samp(_values_p0,_values_p1)
+                    _statistic = _res.statistic
+                    _pvalue = _res.pvalue
                 case "kolmogorov-smirnov":
                     _statistic, _pvalue = stats.kstest(_values_p0,_values_p1)
                 case "alexander-govern":
-                    _statistic, _pvalue = stats.alexandergovern(_values_p0,_values_p1)
+                    _res = stats.alexandergovern(_values_p0,_values_p1)
+                    _statistic = _res.statistic
+                    _pvalue = _res.pvalue
                 case "fligner-killeen":
                     _statistic, _pvalue = stats.fligner(_values_p0,_values_p1)
                 case "bartlett":
