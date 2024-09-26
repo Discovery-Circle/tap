@@ -299,10 +299,10 @@ def plot_stats(
     fig['layout']['yaxis'].update(autorange = True)
 
     #PLOT OR SAVE FIGURE
-    if filename is None:
-        fig.show()
-    else:
+    if filename is not None:
         if filename.endswith(".html"):
             fig.write_html(filename)
         else:
             fig.write_image(filename, format=filename.split(".")[-1], engine='kaleido', width=export_size[0], height=export_size[1], scale=export_size[2])
+    
+    return fig
