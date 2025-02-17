@@ -63,7 +63,7 @@ pip install taplib
 ```
 Or if you prefer you can clone the repository and install it manually
 ```bash
-git clone https://github.com/FedericaPersiani/tap.git
+git clone https://github.com/Discovery-Circle/tap.git
 cd tap
 pip install .
 ```
