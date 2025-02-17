@@ -51,6 +51,7 @@ def plot_stats(
 
     #ALL X INSIDE DATAFRAME
     all_x = list(df[x].unique())
+    y_plot = y
 
     #ORDER ELEMENTS
     if order is None:
@@ -78,11 +79,11 @@ def plot_stats(
 
       new_column_name = f"log10({y})"
       df[new_column_name] = df[y].apply(lambda x: funzione_scaling(x))
-      y = new_column_name
+      y_plot = new_column_name
 
     #CALCULATE VERTICAL MIN, MAX AND SINGLE UNIT
-    v_min = min(df[y].values)
-    v_max = max(df[y].values)
+    v_min = min(df[y_plot].values)
+    v_max = max(df[y_plot].values)
     v_unit = (v_max - v_min) * 0.1
 
     #FIND ALL GROUP
@@ -111,7 +112,7 @@ def plot_stats(
     info_data = dict()
     for _index, _single_group in enumerate(all_groups):
         if subcategory is None:
-            _values = df[df[x] == _single_group][y].values
+            _values = df[df[x] == _single_group][y_plot].values
             if len(_values) > 0:
                 info_data[_single_group] = {
                     "max": max(_values),
@@ -119,7 +120,7 @@ def plot_stats(
                     "index_subclass": _index
                 }
         else:
-            _values = df[ (df[x] == _single_group[0]) & (df[subcategory] == _single_group[1]) ][y].values
+            _values = df[ (df[x] == _single_group[0]) & (df[subcategory] == _single_group[1]) ][y_plot].values
             if len(_values) > 0:
                 info_data[_single_group] = {
                     "max": max(_values),
@@ -131,9 +132,9 @@ def plot_stats(
     fig=None
     match type_plot:
         case "box": 
-            fig = px.box(df, x=x, y=y, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
+            fig = px.box(df, x=x, y=y_plot, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
         case "strip":
-            fig = px.strip(df, x=x, y=y, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
+            fig = px.strip(df, x=x, y=y_plot, color=(x if subcategory is None else subcategory), category_orders={f"{x}": order}, **kwargs)
 
     dunn_values = {}
     #In case of Dunn generate Map
