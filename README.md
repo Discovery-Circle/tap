@@ -144,25 +144,31 @@ tap.plot_stats(df, x, y, kwargs={"width":500, "height":500, "title": "My title",
 This repository is inspired by trevismd/statannotations ([Statannotations](https://github.com/trevismd/statannotations)), which compute statistical tests and annotations with seaborn
 
 ## 💬 Citation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13844301.svg)](https://doi.org/10.5281/zenodo.13844301)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14884304.svg)](https://doi.org/10.5281/zenodo.14884304)
 
 BibTeX
 ```text
-@software{persiani_2024_13844301,
+@software{persiani_2025_14884304,
   author       = {Persiani, Federica and
                   Malori, Damiano},
-  title        = {Discovery-Circle/tap: v0.1.7},
-  month        = sep,
-  year         = 2024,
+  title        = {Discovery-Circle/tap: v0.1.8},
+  month        = feb,
+  year         = 2025,
   publisher    = {Zenodo},
-  version      = {0.1.7},
-  doi          = {10.5281/zenodo.13844301},
-  url          = {https://doi.org/10.5281/zenodo.13844301}
+  version      = {0.1.8},
+  doi          = {10.5281/zenodo.14884304},
+  url          = {https://doi.org/10.5281/zenodo.14884304},
+  swhid        = {swh:1:dir:504793555715b38909ab48f5eb3163ef0c915f86
+                   ;origin=https://doi.org/10.5281/zenodo.10464612;vi
+                   sit=swh:1:snp:c83c40c21a54262baac40253325678491701
+                   8b4a;anchor=swh:1:rel:50cf47844df4232d7bb35602e01c
+                   94effefd0c28;path=Discovery-Circle-tap-d4d8990
+                  },
 }
 ```
 APA
 ```
-Persiani, F., & Malori, D. (2024). Discovery-Circle/tap: v0.1.7 (0.1.7). Zenodo. https://doi.org/10.5281/zenodo.13844301
+Persiani, F., & Malori, D. (2025). Discovery-Circle/tap: v0.1.8 (0.1.8). Zenodo. https://doi.org/10.5281/zenodo.14884304
 ```
 
 ## ✨ Contributors
