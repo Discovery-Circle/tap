@@ -206,3 +206,13 @@ Persiani, F., & Malori, D. (2025). Discovery-Circle/tap: v0.1.8 (0.1.8). Zenodo.
   </tbody>
 </table>
 
+<p align="center">
+  <a href="https://mapmyvisitors.com/web/1byz9">
+     <img width="200"  src="https://mapmyvisitors.com/map.png?cl=ffffff&w=a&t=n&d=3tuwOWfi7plKMItW_pNdljI9ESzeu6DV3p973D-Q028" />
+   </a>
+</p>
+<p align="center">
+  <a href="#">
+     <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FDiscovery-Circle%2Ftap&labelColor=%233499cc&countColor=%2370c168" />
+   </a>
+</p>
